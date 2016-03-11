@@ -3,6 +3,12 @@ const publicRoutes = FlowRouter.group({
   triggersEnter: [ publicRedirect ]
 });
 
+const publicRedirect = ( context, redirect ) => {
+  if ( Meteor.userId() ) {
+    Modules.both.redirectUser( { redirect: redirect } );
+  }
+};
+
 publicRoutes.route( '/invite/:token', {
   name: 'invite',
   action() {

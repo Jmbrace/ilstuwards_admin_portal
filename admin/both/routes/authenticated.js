@@ -1,3 +1,16 @@
+const blockUnauthorizedAdmin = ( context, redirect ) => {
+  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), 'admin' ) ) {
+    Modules.both.redirectUser( { redirect: redirect } );
+  }
+};
+
+const blockUnauthorizedManager = ( context, redirect ) => {
+  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), [ 'admin', 'manager' ] ) ) {
+    Modules.both.redirectUser( { redirect: redirect } );
+  }
+};
+
+
 const authenticatedRoutes = FlowRouter.group({
   name: 'authenticated',
   triggersEnter: [ authenticatedRedirect ]
@@ -17,6 +30,4 @@ authenticatedRoutes.route( '/managers', {
   action() {
     BlazeLayout.render( 'default', { yield: 'managers' } );
   }
-});
-
 });
