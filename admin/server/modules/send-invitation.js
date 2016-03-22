@@ -28,3 +28,4 @@ let _sendInvitation = ( email, content ) => {
 };
 
 Modules.server.sendInvitation = invitation;
+
