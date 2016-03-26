@@ -39,6 +39,19 @@ let _handleLogin = ( template ) => {
       Bert.alert( error.reason, 'warning' );
     } else {
       Bert.alert( 'Logged in!', 'success' );
+
+    let _getCurrentUserRoles = () => {
+  return Roles.getRolesForUser( Meteor.userId() );
+};
+    let roles = _getCurrentUserRoles();
+    console.log(roles);
+
+    if ( roles[0] === 'admin' )    {
+      FlowRouter.go('users');
+    }
+    else{
+      FlowRouter.go('farm');
+    }
     }
   });
 };

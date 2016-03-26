@@ -33,7 +33,7 @@ let _createUsers = ( users ) => {
       if ( isAdmin ) {
         Roles.setUserRoles( userId, 'admin' );
       } else {
-        Roles.setUserRoles( userId, 'employee' );
+        Roles.setUserRoles( userId, 'farm' );
       }
     }
   }

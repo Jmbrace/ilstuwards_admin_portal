@@ -15,3 +15,15 @@ publicRoutes.route( '/invite/:token', {
     BlazeLayout.render( 'default', { yield: 'invite' } );
   }
 });
+
+FlowRouter.route('/', {
+  action: function() {
+    BlazeLayout.render("admin");
+  }
+});
+
+FlowRouter.route('/login', {
+  action: function() {
+    BlazeLayout.render("login");
+  }
+});

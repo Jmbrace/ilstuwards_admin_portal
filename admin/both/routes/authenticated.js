@@ -4,8 +4,8 @@ const blockUnauthorizedAdmin = ( context, redirect ) => {
   }
 };
 
-const blockUnauthorizedManager = ( context, redirect ) => {
-  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), [ 'admin', 'manager' ] ) ) {
+const blockUnauthorizedFarm = ( context, redirect ) => {
+  if ( Meteor.userId() && !Roles.userIsInRole( Meteor.userId(), [ 'admin', 'farm' ] ) ) {
     Modules.both.redirectUser( { redirect: redirect } );
   }
 };
@@ -30,10 +30,10 @@ authenticatedRoutes.route( '/users', {
   }
 });
 
-authenticatedRoutes.route( '/managers', {
-  name: 'managers',
-  triggersEnter: [ blockUnauthorizedManager ],
+authenticatedRoutes.route( '/farm', {
+  name: 'farm',
+  triggersEnter: [ blockUnauthorizedFarm ],
   action() {
-    BlazeLayout.render( 'default', { yield: 'managers' } );
+    BlazeLayout.render( 'default', { yield: 'farm' } );
   }
 });

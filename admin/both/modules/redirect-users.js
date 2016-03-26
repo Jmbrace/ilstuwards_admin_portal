@@ -9,8 +9,8 @@ let _sendUserToDefault = ( redirect ) => {
     _redirectUser( 'users', redirect );
   }
 
-  if ( roles[0] === 'manager' )  {
-    _redirectUser( 'managers', redirect );
+  if ( roles[0] === 'farm' )  {
+    _redirectUser( 'farm', redirect );
   }
 
 };

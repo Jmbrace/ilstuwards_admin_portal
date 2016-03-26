@@ -19,16 +19,3 @@ Template.registerHelper( 'currentRoute', ( route ) => {
   FlowRouter.watchPathChange();
   return FlowRouter.current().route.name === route ? 'active' : '';
 });
-
-FlowRouter.route('/', {
-  action: function() {
-    BlazeLayout.render("admin");
-    console.log("FlagHOME");
-  }
-});
-
-FlowRouter.route('/login', {
-  action: function() {
-    BlazeLayout.render("login");
-  }
-});
