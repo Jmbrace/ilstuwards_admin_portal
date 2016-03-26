@@ -15,13 +15,3 @@ publicRoutes.route( '/invite/:token', {
     BlazeLayout.render( 'default', { yield: 'invite' } );
   }
 });
-
-
-
-
-publicRoutes.route( '/login', {
-  name: 'login',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'login' } );
-  }
-});

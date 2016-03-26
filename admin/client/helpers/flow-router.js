@@ -23,6 +23,7 @@ Template.registerHelper( 'currentRoute', ( route ) => {
 FlowRouter.route('/', {
   action: function() {
     BlazeLayout.render("admin");
+    console.log("FlagHOME");
   }
 });
 
