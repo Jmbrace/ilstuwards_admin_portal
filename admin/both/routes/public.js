@@ -26,4 +26,11 @@ FlowRouter.route('/login', {
   action: function() {
     BlazeLayout.render("login");
   }
+
+});
+
+FlowRouter.route('/signup', {
+  action: function() {
+    BlazeLayout.render("signup");
+  }
 });

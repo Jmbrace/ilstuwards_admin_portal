@@ -19,3 +19,5 @@ Template.registerHelper( 'currentRoute', ( route ) => {
   FlowRouter.watchPathChange();
   return FlowRouter.current().route.name === route ? 'active' : '';
 });
+
+//});

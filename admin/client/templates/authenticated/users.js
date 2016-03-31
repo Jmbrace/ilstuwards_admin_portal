@@ -36,6 +36,9 @@ Template.users.events({
       if ( error ) {
         Bert.alert( error.reason, "warning" );
       }
+      else if (response){
+        console.log(response);
+      }
     });
   },
   'click .revoke-invite': function( event, template ) {
