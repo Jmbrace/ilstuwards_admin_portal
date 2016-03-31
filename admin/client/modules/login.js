@@ -52,6 +52,8 @@ let _handleLogin = ( template ) => {
     else{
       FlowRouter.go('farm');
     }
+
+
     }
   });
 };
