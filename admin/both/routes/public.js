@@ -15,3 +15,22 @@ publicRoutes.route( '/invite/:token', {
     BlazeLayout.render( 'default', { yield: 'invite' } );
   }
 });
+
+FlowRouter.route('/', {
+  action: function() {
+    BlazeLayout.render("admin");
+    console.log("FlagHOME");
+  }
+});
+
+FlowRouter.route('/login', {
+  action: function() {
+    BlazeLayout.render("login");
+  }
+});
+
+FlowRouter.route('/signup', {
+  action: function() {
+    BlazeLayout.render("signup");
+  }
+});

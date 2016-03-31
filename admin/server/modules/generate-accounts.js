@@ -44,6 +44,7 @@ let _checkIfUserExists = ( email ) => {
 };
 
 let _createUser = ( user ) => {
+  console.log();
   let userId = Accounts.createUser({
     email: user.email,
     password: user.password,
