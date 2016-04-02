@@ -21,19 +21,20 @@ let _checkIfAccountsExist = ( count ) => {
   return userCount < count ? false : true;
 };
 
-let _createUsers = ( users ) => {
+let _createUsers = ( users ) => { // passes an array of user Objects
   for ( let i = 0; i < users.length; i++ ) {
-    let user       = users[ i ],
-        userExists = _checkIfUserExists( user.email );
+    let user       = users[ i ], //specific user id
+        userExists = _checkIfUserExists( user.email ); // boolean if it exists in user collection
 
-    if ( !userExists ) {
-      let userId  = _createUser( user ),
-          isAdmin = _checkIfAdmin( user.email );
+    if ( !userExists ) { // if new user
+      let userId  = _createUser( user ), // call create single user object
+          isAdmin = _checkIfAdmin( user.email ); //
 
       if ( isAdmin ) {
         Roles.setUserRoles( userId, 'admin' );
       } else {
-        Roles.setUserRoles( userId, 'farm' );
+        console.log("Go in here?");
+        Roles.setUserRoles( userId, 'farm');
       }
     }
   }
@@ -52,7 +53,6 @@ let _createUser = ( user ) => {
       name: user.name
     }
   });
-
   return userId;
 };
 

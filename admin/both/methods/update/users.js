@@ -6,7 +6,11 @@ Meteor.methods({
     });
 
     try {
+      console.log("exception");
+      console.log(options.user);
+      
       Roles.setUserRoles( options.user, [ options.role ] );
+
     } catch( exception ) {
       return exception;
     }

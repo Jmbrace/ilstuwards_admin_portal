@@ -2,7 +2,7 @@ let startup = () => {
   _setEnvironmentVariables();
   _setBrowserPolicies();
   _generateAccounts();
-  // _setAdmins();
+ // Roles.createRole('farm');
 };
 
 let _setEnvironmentVariables = () => {
