@@ -34,3 +34,9 @@ FlowRouter.route('/signup', {
     BlazeLayout.render("signup");
   }
 });
+
+FlowRouter.route('/pins', {
+  action: function() {
+    BlazeLayout.render("pins");
+  }
+});
