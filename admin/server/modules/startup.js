@@ -2,7 +2,7 @@ let startup = () => {
   _setEnvironmentVariables();
   _setBrowserPolicies();
   _generateAccounts();
-  // _setAdmins();
+  _setAdmins();
 };
 
 let _setEnvironmentVariables = () => {
@@ -14,6 +14,6 @@ let _setBrowserPolicies = () => {};
 
 let _generateAccounts = () => Modules.server.generateAccounts();
 
-// let _setAdmins = () => Modules.server.setAdmins();
+let _setAdmins = () => Modules.server.setAdmins();
 
 Modules.server.startup = startup;

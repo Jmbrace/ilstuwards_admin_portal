@@ -34,3 +34,17 @@ FlowRouter.route('/signup', {
     BlazeLayout.render("signup");
   }
 });
+
+publicRoutes.route( '/recover-password', {
+  name: 'recover-password',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'recoverPassword' } );
+  }
+});
+
+publicRoutes.route( '/reset-password/:token', {
+  name: 'reset-password',
+  action() {
+    BlazeLayout.render( 'default', { yield: 'resetPassword' } );
+  }
+});
