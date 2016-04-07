@@ -46,5 +46,10 @@ publicRoutes.route( '/reset-password/:token', {
   name: 'reset-password',
   action() {
     BlazeLayout.render( 'default', { yield: 'resetPassword' } );
+});
+
+FlowRouter.route('/pins', {
+  action: function() {
+    BlazeLayout.render("pins");
   }
 });

@@ -1,11 +1,55 @@
 <template name="farm">
+     <header> 
+     <img src="http://www.ilstewards.org/wp-content/uploads/2013/04/cropped-ISAlogo-v-tag.jpg">
+     </header>
+
+    <h1>Sign up!</h1>
+  
+    <br>
 <form>
   <fieldset class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-    <small class="text-muted">We'll never share your email with anyone else.</small>
-  </fieldset>
-  <fieldset class="form-group">
+
+    <label for="contactName">Contact Name</label>
+    <input type="contactName" class="form-control" id="city" placeholder="Enter Contact Name">
+
+    <label for="personalPhone">Contact Phone Number</label>
+    <input type="personalPhone" class="form-control" id="personalPhone" placeholder="Enter Personal Contact Phone Number">
+
+    <label for="personalEmail">Contact Email</label>
+    <input type="personalEmail" class="form-control" id="personalEmail" placeholder="Enter Personal Contact Email">
+
+    <small class="text-muted">We'll never share your contact information with anyone else.</small>
+
+    <br>
+
+    <label for="businessName">Business Name</label>
+    <input type="businessName" class="form-control" id="businessName" placeholder="Enter Business Name">
+
+    <label for="address">Address</label>
+    <input type="address" class="form-control" id="address" placeholder="Enter Business Address">
+
+    <label for="city">City</label>
+    <input type="city" class="form-control" id="city" placeholder="Enter City">
+    
+    <label for="state">State</label>
+    <input type="state" class="form-control" id="state" placeholder="Enter State">
+
+    <label for="zip">Zip</label>
+    <input type="city" class="form-control" id="zip" placeholder="Enter Zip Code">
+    
+    <label for="county">County</label>
+    <input type="county" class="form-control" id="county" placeholder="Enter County">
+
+    <label for="description">Description</label>
+    <textarea class="form-control" id="exampleTextarea" rows="5" placeholder="Enter Description: Business Phone, Business Email, Website, Facebook, Hours, Products etc."></textarea>
+    </fieldset>
+
+
+
+
+    
+
+  <!-- <fieldset class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </fieldset>
@@ -29,10 +73,7 @@
       <option>5</option>
     </select>
   </fieldset>
-  <fieldset class="form-group">
-    <label for="exampleTextarea">Example textarea</label>
-    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-  </fieldset>
+  
   <fieldset class="form-group">
     <label for="exampleInputFile">File input</label>
     <input type="file" class="form-control-file" id="exampleInputFile">
@@ -60,7 +101,7 @@
     <label>
       <input type="checkbox"> Check me out
     </label>
-  </div>
+  </div> -->
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 

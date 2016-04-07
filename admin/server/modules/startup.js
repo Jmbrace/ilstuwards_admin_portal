@@ -2,7 +2,8 @@ let startup = () => {
   _setEnvironmentVariables();
   _setBrowserPolicies();
   _generateAccounts();
-  _setAdmins();
+
+  // _setAdmins();
 };
 
 let _setEnvironmentVariables = () => {
