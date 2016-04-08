@@ -1,0 +1,6 @@
+{
+	"private":{
+		"MAIL_URL": "smtp://postmaster%40sandbox89c658f7407e4beba0ebdfc77143c297.mailgun.org:f5a78530906b0c0ff90291187863d297@smtp.mailgun.org:587" ,
+		"domain": "localhost:3000"
+	} 
+}
