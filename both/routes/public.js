@@ -9,10 +9,16 @@ const publicRedirect = ( context, redirect ) => {
   }
 };
 
-publicRoutes.route( '/invite/:token', {
-  name: 'invite',
-  action() {
-    BlazeLayout.render( 'default', { yield: 'invite' } );
+// publicRoutes.route( '/invite/:token', {
+//   name: 'invite',
+//   action() {
+//     BlazeLayout.render( 'default', { yield: 'invite' } );
+//   }
+// });
+
+FlowRouter.route('/invite/:token', {
+  action: function() {
+    BlazeLayout.render('default', { yield: 'invite' } );
   }
 });
 

@@ -6,9 +6,11 @@ Meteor.methods({
     });
 
     try {
+      var token = Random.hexString( 16 );
+      console.log(token);
       Modules.server.sendInvitation({
         email: invitation.email,
-        token: Random.hexString( 16 ),
+        token:  token,
         role: invitation.role,
         date: ( new Date() ).toISOString()
       });
