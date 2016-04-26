@@ -15,7 +15,7 @@ BFBLSchema = new SimpleSchema({
   business_email: { type: String, defaultValue: null },
   website: { type: String, defaultValue: null },
   facebook: { type: String, defaultValue: null },
-  hours_of_operation: { type: String, defaultValue: null}
+  hours_of_operation: { type: String, defaultValue: null},
   lat: { type: Number, defaultValue:null},
   long: { type: Number, defaultValue: null}
 });
