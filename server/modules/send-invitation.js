@@ -23,8 +23,8 @@ let _prepareEmail = ( token ) => {
 let _sendInvitation = ( email, content ) => {
   Email.send({
     to: email,
-    from: "The Illnois Stewardship Alliance <sandbox89c658f7407e4beba0ebdfc77143c297.mailgun.org>",
-    subject: "Invitation to Banana Co.",
+    from: "sandbox89c658f7407e4beba0ebdfc77143c297.mailgun.org",
+    subject: "Invitation to The Illnois Stewardship Alliance",
     html: content
   });
 };
