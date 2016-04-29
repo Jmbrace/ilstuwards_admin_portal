@@ -1,6 +1,7 @@
 BFBL = new Meteor.Collection( 'bfbl' );
 
 BFBLSchema = new SimpleSchema({
+  category: {type: String, defaultValue: null},
   business: { type: String, defaultValue: null },
   name: { type: String , defaultValue: null},
   phone: { type: String , defaultValue: null }, 
@@ -23,7 +24,7 @@ BFBLSchema = new SimpleSchema({
 BFBL.attachSchema( BFBL.schema );
 
 
-// BFBL.insert( { example of how to insert
+// BFBL.insert( { //example of how to insert
 
 //   business: 'Acbees Apiaries',
 //   name: 'Arvin Pierce',

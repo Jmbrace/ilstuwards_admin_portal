@@ -5,10 +5,9 @@
     {{/if}}
 
     {{#if isInRole 'admin,manager'}}
-      <li class="{{currentRoute 'managers'}}"><a href="{{pathFor 'managers'}}">Managers</a></li>
+      <li class="{{currentRoute 'managers'}}"><a href="{{pathFor 'managers'}}">Pins</a></li>
     {{/if}}
     
-    <li class="{{currentRoute 'employees'}}"><a href="{{pathFor 'employees'}}">Employees</a></li>
   </ul>
   <ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
