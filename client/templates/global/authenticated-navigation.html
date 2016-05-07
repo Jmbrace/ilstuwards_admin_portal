@@ -4,8 +4,8 @@
       <li class="{{currentRoute 'users'}}"><a href="{{pathFor 'users'}}">Users</a></li>
     {{/if}}
 
-    {{#if isInRole 'admin,manager'}}
-      <li class="{{currentRoute 'managers'}}"><a href="{{pathFor 'managers'}}">Pins</a></li>
+    {{#if isInRole 'admin,farm'}}
+      <li class="{{currentRoute 'pins'}}"><a href="{{pathFor 'pins'}}">Pins</a></li>
     {{/if}}
     
   </ul>

@@ -1,8 +1,11 @@
 <template name= "pins">
+
+{{>header}}
+
 <div class="container">
   <h2>Pins Table</h2>
   <p>Table that keeps track of each farm pin</p>            
-  <table class="table table-bordered">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Date Added</th>
@@ -10,7 +13,7 @@
         <th>Verified</th>
         <th>Exp. Date</th>
         <th>Category</th>
-        <th>Edit</th>
+
       </tr>
     </thead>
     <tbody>
@@ -20,9 +23,16 @@
         <td>sure</td>
         <td>4/20/2021</td>
         <td>Farm</td>
-        <td> Edit Button Goes here </td>
+        <td> <button type="button" class="btn btn-warning">Edit</button> </td>
       </tr>
-     
+      <tr>
+        <td>4/20/1969</td>
+        <td>Farmer Joe</td>
+        <td>sure</td>
+        <td>4/20/2021</td>
+        <td>Farm</td>
+        <td> <button type="button" class="btn btn-warning">Edit</button> </td>
+      </tr>
     </tbody>
   </table>
 </div>
