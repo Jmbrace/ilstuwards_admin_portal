@@ -18,7 +18,8 @@ BFBLSchema = new SimpleSchema({
   facebook: { type: String, defaultValue: null },
   hours_of_operation: { type: String, defaultValue: null},
   lat: { type: Number, defaultValue:null},
-  long: { type: Number, defaultValue: null}
+  long: { type: Number, defaultValue: null},
+  
 });
 
 BFBL.attachSchema( BFBL.schema );

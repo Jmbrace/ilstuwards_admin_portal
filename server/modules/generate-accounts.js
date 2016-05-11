@@ -37,6 +37,7 @@ let _createUsers = ( users ) => { // passes an array of user Objects
         Roles.setUserRoles( userId, 'farm');
       }
     }
+
   }
 };
 
@@ -45,14 +46,16 @@ let _checkIfUserExists = ( email ) => {
 };
 
 let _createUser = ( user ) => {
-  console.log();
   let userId = Accounts.createUser({
     email: user.email,
     password: user.password,
     profile: {
       name: user.name
-    }
+   },
+   isVerified: false
+    
   });
+
   return userId;
 };
 
@@ -69,9 +72,10 @@ let _generateFakeUsers = ( count ) => {
     users.push({
       name: { first: faker.name.firstName(), last: faker.name.lastName() },
       email: faker.internet.email(),
-      password: 'password'
+      password: 'password',
     });
   }
+
 
   return users;
 };

@@ -4,7 +4,7 @@ Template.header.helpers({
     let login = FlowRouter.path( 'login' ),
         index = FlowRouter.path( 'users' );
         pins = FlowRouter.path( 'pins' );
-    return !Meteor.loggingIn() && !Meteor.userId() ? login : index;
+    return !Meteor.loggingIn() && !Meteor.userId() ? login : login;
   }
 });
 
