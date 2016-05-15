@@ -6,7 +6,10 @@ let administrators = [
   }
 ];
 
+
+
 let generateAccountsBFBL = () => { //convert BFBL members to users
+ 
   var userCount = Meteor.users.find().count();
   if(userCount > 0){
     console.log("Users already added.");
@@ -15,8 +18,9 @@ let generateAccountsBFBL = () => { //convert BFBL members to users
   {
 
     _createUsers( administrators );
+    var index = 0;
 
-    var bfblCursor = BFBL.find({});
+    var bfblCursor = BFBLmember.find({}).fetch();
     bfblCursor.forEach(function(member){
 
       //run through bfbl collection and create users based off name/email
@@ -24,12 +28,12 @@ let generateAccountsBFBL = () => { //convert BFBL members to users
       var username = name.split(' ').join('_');
       let usernameExists = _checkIfUsernameExists (username);
       let emailExists = _checkIfUserEmailExists( member.email );
-      let multEmails = member.email.split(' ')
+      // let multEmails = member.email.split(' ');
       console.log('email' + member.email); 
 
       if( !usernameExists ){
         let userID = null;
-        if(!emailExists){
+        if(member.email != null && !emailExists){
           userId = Accounts.createUser({ 
           username: username, 
           email: member.email,
@@ -39,8 +43,8 @@ let generateAccountsBFBL = () => { //convert BFBL members to users
          },
         }); 
         }
-        else if( emailExists ){
-          console.log("email exists" + member.email);
+        else if( member.email == null ){
+          console.log("email exists:" + member.email);
 
           userId = Accounts.createUser({ 
           username: username, 
@@ -48,14 +52,25 @@ let generateAccountsBFBL = () => { //convert BFBL members to users
           profile: {
 
          },
-        }); 
-        }
+        });
+        } 
         Meteor.users.update( userId  , { $set: {
           isVerified: true}
         });
         console.log("User added:" + username);
+        console.log('member name' + member.name);
+        console.log("memberId:" + member._id);
+        BFBLmember.update( { '_id' : member._id }, {
+          $set: {
+          'user': userId.toString()
+          }
+        }, { validate: false, filter: false }, function(error){
+          if(error) throw error;
+        });
+        
         Roles.setUserRoles( userId, 'farm'); 
-      }
+        index++;
+      } 
       else{
         console.log("User rejected : " + username);
       }

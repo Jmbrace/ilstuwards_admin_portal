@@ -1,6 +1,7 @@
 BFBL = new Meteor.Collection( 'bfbl' );
 Schema = {};
 BFBLSchema = new SimpleSchema({
+  _id : {type: String},
   category: {type: String, defaultValue: null},
   business: { type: String, defaultValue: null },
   name: { type: String , defaultValue: null},
@@ -19,9 +20,7 @@ BFBLSchema = new SimpleSchema({
   hours_of_operation: { type: String, defaultValue: null},
   lat: { type: Number, defaultValue:null},
   long: { type: Number, defaultValue: null},
-  user: {
-    type: Schema.User
-  }
+  user: {type: String, defaultValue: null}
 });
 
 BFBL.attachSchema( BFBL.schema );
