@@ -10,7 +10,15 @@ Template.users.helpers({
       return users;
     }
   },
-   hasInvitations: function() {
+
+  getBfbl: function() {
+    console.log(this._id);
+    var bfbl = BFBLmember.findOne({user: this._id});
+    console.log(bfbl);
+    return BFBLmember.findOne({user: this._id});
+  },
+
+  hasInvitations: function() {
     var invitations = Invitations.find().count();
     return invitations < 1 ? false : true;
   },
